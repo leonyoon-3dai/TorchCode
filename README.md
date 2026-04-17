@@ -36,6 +36,16 @@ Practice implementing operators and architectures from scratch — the exact ski
 
 ---
 
+## 🇰🇷 한국어 해설집
+
+모든 40개 예제에 대한 **line-by-line 한국어 해설 + 시각 자료** 가 추가되었습니다:
+
+➡️ **[docs_ko/README.md — 한국어 해설집 인덱스](docs_ko/README.md)**
+
+각 예제 페이지는 수식, 도식, 코드 라인별 설명, 관련 예제 링크를 포함합니다.
+
+---
+
 ## 🎯 Why TorchCode?
 
 Top companies (Meta, Google DeepMind, OpenAI, etc.) expect ML engineers to implement core operations **from memory on a whiteboard**. Reading papers isn't enough — you need to write `softmax`, `LayerNorm`, `MultiHeadAttention`, and full Transformer blocks code.
