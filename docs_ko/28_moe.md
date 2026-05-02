@@ -4,7 +4,7 @@
 
 ## 개념
 
-FFN 을 하나만 쓰는 대신 **여러 개의 expert** 를 두고, 각 토큰마다 **top-k 전문가만** 활성화합니다. Router 가 어느 expert 로 보낼지 결정.
+FFN 을 하나만 쓰는 대신 **여러 개의 expert** 를 두고, 각 토큰마다 Router 가 **top-k 전문가만 선택**해 그 expert 들만 forward 에 참여시킵니다. 나머지 expert 는 해당 토큰에 대해 호출되지 않음.
 
 - 전체 파라미터 ↑ (capacity ↑)
 - 토큰당 실제 연산 ≈ top-k × 단일 expert (sparse)

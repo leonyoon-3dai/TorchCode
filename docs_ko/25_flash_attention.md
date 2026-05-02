@@ -43,7 +43,7 @@ def flash_attention(Q, K, V, block_size=32):
 
 ### 외부 for loop — Query block
 
-각 block `qi = Q[:, i:i+bs]` 마다 독립 처리. 이 block 에 해당하는 **상태 3개** 를 갖고 K/V 전체를 순회합니다:
+각 block `qi = Q[:, i:i+block_size]` 마다 독립 처리. 이 block 에 해당하는 **상태 3개** 를 갖고 K/V 전체를 순회합니다:
 
 | 상태 | 역할 | 의미 |
 |------|------|------|
@@ -79,7 +79,7 @@ $$\text{acc}_{new} = e^{m_{old}-m_{new}} \cdot \text{acc}_{old} + \sum_{j \in \t
 ### 최종 출력
 
 ```python
-output[:, i:i+bs] = acc / row_sum
+output[:, i:i+block_size] = acc / row_sum
 ```
 
 softmax 의 "분자 / 분모" 를 마지막에 한 번만 수행.
