@@ -46,6 +46,14 @@ Practice implementing operators and architectures from scratch — the exact ski
 
 ---
 
+## 2026-05-14 Codex 점검 메모
+
+- PyTorch 인터뷰 준비는 `tensor shape`, broadcasting, autograd, numerical stability, memory layout, mixed precision을 같이 설명할 수 있어야 합니다. 단순 구현만 외우기보다 왜 `softmax`에서 max-shift를 하는지, 왜 LayerNorm/RMSNorm이 sequence 모델에서 중요한지까지 연결하세요.
+- CUDA repo들과 함께 볼 때 TorchCode는 "연산의 수학/텐서 API 레벨"을 담당합니다. 같은 주제를 LeetCUDA에서는 kernel/block/warp/memory 관점으로, TorchCode에서는 PyTorch/autograd/modeling 관점으로 비교하면 이해가 빨라집니다.
+- GPU가 없는 환경에서도 대부분 문제는 CPU로 학습 가능합니다. 성능형 질문은 GPU 환경에서 PyTorch profiler, `torch.compile`, FlashAttention/SDPA backend를 따로 확인해야 합니다.
+
+---
+
 ## 🎯 Why TorchCode?
 
 Top companies (Meta, Google DeepMind, OpenAI, etc.) expect ML engineers to implement core operations **from memory on a whiteboard**. Reading papers isn't enough — you need to write `softmax`, `LayerNorm`, `MultiHeadAttention`, and full Transformer blocks code.
